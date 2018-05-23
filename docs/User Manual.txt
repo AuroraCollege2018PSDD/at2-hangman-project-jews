@@ -1,13 +1,13 @@
-Once you open the game type what level you want.
-Levels are:
+Once you open the game choose the level you want.
+These Levels include:
 Easy
 Medium
 Hard 
 Unique
 
-If you guess a letter wrong, a part of the drawing will be added. 
-Once the drawing is complete you lose.
-If you guess a letter correct you will get to try again without parts of the drawing being added.
+You are then asked to guess a letter from a-z and if you guess the letter wrong, a new part of the drawing will be added. 
+Once the drawing is complete after a certain amount of attempts you lose.
+If you guess a letter correct, the letter will show up where in the word it sits, and you will get to try again without parts of the drawing being added.
 If you guess the entire word correct you win.
 
-You can play again or finish there.
+The user will then be asked if they would like to play another game.
