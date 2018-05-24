@@ -27,18 +27,25 @@ else:
     print("Sorry that is not a level. Restart the game and enter a valid level.")
     
 #in this space an if statement will be used to activate the certain level chosen
-    
+
 word = "isotope" #this is just to use in place of the worlist and for testing purposes
 word = list(word)
+showWord = len(word)
+
+#this displays how many letters they. Not sure if this can be edited to add letters to it
+while showWord > 0:
+        print("_ ",end=' ')
+        showWord = showWord - 1
+
 
 #array that can be used at any time when using an if statement
-alphabetArray = ['a', 'b', 'c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+alphaArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
 
 #gets input for letter guessed
-guess = input("Guess a letter: ")
+guess = input("\nGuess a letter: ")
 
-#sees if their guess is correct or wrong
-if guess == alphabet
+while 
 
       
         
