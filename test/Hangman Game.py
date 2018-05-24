@@ -12,9 +12,20 @@ __email__ = "eamon.petersons@education.nsw.go.au"
 __status__ = "Prototype"
 
 
+words = 
 
-words = open("wordlist.txt", "r")
 
+level = input("Welcome to Hangman! You have a choice of 4 levels.\nThese levels are easy, medium, hard and unique.\nWhat level would you like to play? ")
+level = level.lower()
 
-level = input("Welcome to Hangman! You have a choice of 4 levels. These levels are easy, medium, hard and unique. What level would you like to play? ")
+if level == "easy":
+    print("easy")
+elif level == "medium":
+    print("medium")
+elif level == "hard":
+    print("hard")
+elif level == "unique":
+    print("unique")
+else:
+    print("Sorry that is not a level.")
               
