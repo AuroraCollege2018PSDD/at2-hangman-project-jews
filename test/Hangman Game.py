@@ -9,7 +9,7 @@ __status__ = "Prototype"
 
 "This is incomplete with multiple important lines missing"
 
-import random
+
 
 #gets input for what level is wanted
 level = input("Welcome to Hangman! You have a choice of 4 levels.\nThese levels are easy, medium, hard and unique.\nWhat level would you like to play? ")
@@ -28,24 +28,25 @@ else:
     
 #in this space an if statement will be used to activate the certain level chosen
 
+
 word = "isotope" #this is just to use in place of the worlist and for testing purposes
-word = list(word)
 showWord = len(word)
+wordList = list(word)
 
 #this displays how many letters they. Not sure if this can be edited to add letters to it
-while showWord > 0:
-        print("_ ",end=' ')
-        showWord = showWord - 1
-
-
-#array that can be used at any time when using an if statement
-alphaArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+for display in range(showWord): 
+    print("_ ",end=' ')
+ 
 
 
 #gets input for letter guessed
 guess = input("\nGuess a letter: ")
 
-while 
+while guess not in wordList:
+    print("Wrong! Try again")
+    break
+else:
+    print("Correct! Have another guess")
 
-      
+
         
