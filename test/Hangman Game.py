@@ -6,47 +6,145 @@ __maintainer__ = ""
 __email__ = "eamon.petersons@education.nsw.go.au"
 __status__ = "Prototype"
 
+import random
 
-"This is incomplete with multiple important lines missing"
+hangArray = ["""
+         ______""", """
+   
+          | 
+          |
+          |
+          |
+          |
+          |
+       ___|___""", """
+   
+          ________ 
+         |/  
+         |
+         |
+         |
+         |
+         |
+      ___|___""", """
+
+         ________ 
+         |/     | 
+         |
+         |
+         |
+         |
+         |
+      ___|___""", """
+          ________ 
+         |/     | 
+         |      O
+         |
+         |
+         |
+         |
+      ___|___""", """
+          ________ 
+         |/     | 
+         |      O
+         |      |
+         |      |
+         |
+         |
+      ___|___""", """
+          ________ 
+         |/     |
+         |      O
+         |     /|\
+         |      |
+         |
+         |
+      ___|___""","""
+          ________ 
+         |/     | 
+         |      O
+         |     /|\
+         |      |
+         |     / \
+         |
+      ___|___"""]
 
 
-
-#gets input for what level is wanted
+#gets input for what level is wanted to be played
 level = input("Welcome to Hangman! You have a choice of 4 levels.\nThese levels are easy, medium, hard and unique.\nWhat level would you like to play? ")
-level = level.lower() #changes the input to lowercase so that it doess't matter if lowercase or uppercase used when giving input
+
+#changes the input to lowercase so that it doess't matter if lowercase or uppercase used when giving input
+level = level.lower()
+
 
 if level == "easy":
-    print("You chose the level: Easy")
+    print("\nYou chose the level: Easy")
+    wordArray = ['lick','spit','leap','soot','luck','goat','tree','keep','quiet','lips','frog','sick','undo','after','pool','zebra','dock','pear','cake','fruit','fish','bound','peel','hide','hour','else','going','seen','bike','clap'] 
 elif level == "medium":
-    print("You chose the level: Medium")
+    print("\nYou chose the level: Medium")
+    wordArray = ['unique','loading','fantasy','justice','video','cringe','describe','total','crystal','radical','different','trust','chalice','dismantle','response','disconnect','largely','content','people','seperation','defending','unfortunate','source','myself','recorded','reason','company','intent','threat','resources']      
 elif level == "hard":
-    print("You chose the level: Hard")
+    print("\nYou chose the level: Hard")
+    wordArray = ['simultaneous','hyperbole','confusion','alcohol','environment','accidentally','optional','sarcasm','malnutriton','monetary','corruption','percentage','underestimated','restoration','pretentious','accommnodate','rhythm','alcoholism','competition','pressure','discipline','strength','consistency','frustrating','catalyst','solitary','animosity','periodicity','xenophobe','analysis']           
 elif level == "unique":
-    print("You chose the level: Unique")
+    print("\nYou chose the level: Unique")
+    wordArray = ['arbitrary','serendipity','fortuitous','intransigent','malodorous','incontrovertible','embezzlement','camaraderie','gratuitous','impecunious','ubiquitous','vociferous','obstreperous','utilitarian','ephemeral','conflagration','diaphanous','idiosyncratic','multifarious','pugnacious','sanctimonious','zephyr','vituperate','inexorable','egregious','commensurate','anachronistic','archetypal','demagogue','incontrobertible']           
 else:
-    print("Sorry that is not a level. Restart the game and enter a valid level.")
+    print("\nSorry that is not a level. Restart the game and enter a valid level.")
     
 #in this space an if statement will be used to activate the certain level chosen
 
 
-word = "isotope" #this is just to use in place of the worlist and for testing purposes
-showWord = len(word)
-wordList = list(word)
-
-#this displays how many letters they. Not sure if this can be edited to add letters to it
-for display in range(showWord): 
-    print("_ ",end=' ')
- 
+word = random.choice(wordArray)
 
 
-#gets input for letter guessed
-guess = input("\nGuess a letter: ")
+#starting numbers and word
+endWord = []
+attempts = 8
 
-while guess not in wordList:
-    print("Wrong! Try again")
-    break
+#this displays how many letters are needed to complete
+while attempts > 0:
+    blank = ""
+    for display in word: 
+        if display in endWord:
+            blank = blank + display
+        else:
+            blank = blank + "_ "
+    
+    #stops the loop if word is complete
+    if blank == word:
+        break
+    
+    #tells the player how many letters left to be guessed as well as how many attempts they have left
+    print("\nThis is your word so far:", blank)
+    print("You have", attempts, "attempts to guess the word.")
+    
+    #gets input for letter guessed
+    print("\n----------------( ͡° ͜ʖ ͡°)----------------")
+    guess = input("\nGuess a letter: ")
+    
+    #sees if the guess is correct and adds it to the blanks
+    if blank == word:
+        break
+    if guess in endWord or guess in blank:
+        print("\nYou have already guessed this letter")
+    elif guess in word:
+        print("\nCorrect!")
+        endWord.append(guess)
+    else:
+        print("\nWrong! Try again")
+        attempts = attempts - 1
+        endWord.append(guess)
+    
+    print(hangArray[::-1][attempts])
+#prints out if they guessed the word or not
+if attempts:
+    print("\nYou got it! The word was", '"' + word + '"')
 else:
-    print("Correct! Have another guess")
-
+    print("\nBad luck. The word was", '"' + word + '"')
 
         
+        
+        
+        
+ 
