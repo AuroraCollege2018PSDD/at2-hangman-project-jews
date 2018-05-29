@@ -101,8 +101,6 @@ def main() :
     else:
         print("\nSorry that is not a level. Restart the game and enter a valid level.")
         main()
-    
-    #in this space an if statement will be used to activate the certain level chosen
 
 
     word = random.choice(wordArray)
@@ -130,11 +128,14 @@ def main() :
         print("\nThis is your word so far:", blank)
         print("You have", attempts, "attempts to guess the word.")
     
-        #gets input for letter guessed
+        #gets input for letter guessed and shows letters used
+       
         print("\n----------------( ͡° ͜ʖ ͡°)----------------")
         guess = input("\nGuess a letter: ")
+       
         letterUsed.append(guess)
         letterDisplay = ", ".join(letterUsed)
+        
         #sees if the guess is correct and adds it to the blanks
         if blank == word:
             break
