@@ -14,4 +14,12 @@ Proposals:
 produce text base game at the start to keep it simple and easy to use
 it contains no offensive words
 
+30/05/18
 
+Client
+
+the client now wants it to be more visual and interactive with mouse
+
+Proposals: 
+
+produce a game that it interactive with mouse
