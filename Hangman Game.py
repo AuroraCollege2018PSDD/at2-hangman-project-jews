@@ -84,11 +84,19 @@ def main() :
 
     #changes the input to lowercase so that it doess't matter if lowercase or uppercase used when giving input
     level = level.lower()
-
+    wordArray = []
+    
 
     if level in ["easy","1"]:
         print("\nYou chose the level: Easy")
-        wordArray = ['lick','spit','leap','soot','luck','goat','tree','keep','quiet','lips','frog','sick','undo','after','pool','zebra','dock','pear','cake','fruit','fish','bound','peel','hide','hour','else','going','seen','bike','clap'] 
+        lines = [] #Declare an empty list named "lines"
+        with open ('Wordlist.txt', 'rt') as in_file:  #Open file lorem.txt for reading of text data.
+            for line in in_file: #For each line of text store in a string variable named "line", and
+                lines.append(line)  #add that line to our list of lines.
+                wordArray = lines[0]
+                
+        
+        #wordArray = ['lick','spit','leap','soot','luck','goat','tree','keep','quiet','lips','frog','sick','undo','after','pool','zebra','dock','pear','cake','fruit','fish','bound','peel','hide','hour','else','going','seen','bike','clap'] 
     elif level in ["medium","2"]:
         print("\nYou chose the level: Medium")
         wordArray = ['unique','loading','fantasy','justice','video','cringe','describe','total','crystal','radical','different','trust','chalice','dismantle','response','disconnect','largely','content','people','seperation','defending','unfortunate','source','myself','recorded','reason','company','intent','threat','resources']      
@@ -102,7 +110,7 @@ def main() :
         print("\nYou have found the secret level xD")
         wordArray = ['yeet','skeet','dab','doge','twentyone','blyat','slav','hippity','emoji','rickroll','lolcat','numa','friday','charlie','chuck','chipmunk','godsplan','lava','onetyone','salt','cashmeoutside','protec','attac']
     else:
-        print("\nSorry that is not a level. Restart the game and enter a valid level.")
+        print("\nSorry that is not a level. Enter a valid level.")
         main()
 
 
