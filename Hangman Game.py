@@ -84,17 +84,15 @@ def main() :
 
     #changes the input to lowercase so that it doess't matter if lowercase or uppercase used when giving input
     level = level.lower()
-    wordArray = []
     
 
     if level in ["easy","1"]:
         print("\nYou chose the level: Easy")
-        lines = [] #Declare an empty list named "lines"
+        read = [] #Declare an empty list named "lines"
         with open ('Wordlist.txt', 'rt') as in_file:  #Open file lorem.txt for reading of text data.
-            for line in in_file: #For each line of text store in a string variable named "line", and
-                lines.append(line)  #add that line to our list of lines.
-                wordArray = lines[0]
-                
+            line = in_file.readlines(1)
+            wordArray = line 
+            print(wordArray)
         
         #wordArray = ['lick','spit','leap','soot','luck','goat','tree','keep','quiet','lips','frog','sick','undo','after','pool','zebra','dock','pear','cake','fruit','fish','bound','peel','hide','hour','else','going','seen','bike','clap'] 
     elif level in ["medium","2"]:
