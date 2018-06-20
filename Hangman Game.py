@@ -80,11 +80,11 @@ def main() :
     import sys
     import random
     #gets input for what level is wanted to be played
-    level = input("\nWelcome to Hangman! You have a choice of 4 levels.\nThese levels are easy, medium, hard and unique.\nWhat level would you like to play? ")
+    levelInput = input("\nWelcome to Hangman! You have a choice of 4 levels.\nThese levels are easy, medium, hard and unique.\nWhat level would you like to play? ")
     with open ('Wordlist.txt', 'rt') as in_file:
         linesArray = in_file.readlines
     #changes the input to lowercase so that it doess't matter if lowercase or uppercase used when giving input
-    level = level.lower()
+    level = levelinput.lower()
     
     if level in ["easy","1"]:
         print("\nYou chose the level: Easy")
