@@ -5,8 +5,20 @@ __version__ = "1.0.1"
 __maintainer__ = ""
 __email__ = "eamon.petersons@education.nsw.go.au"
 __status__ = "Prototype"
+    
+import sys
+import random
+import pygame as P
 
-
+P.init()
+    
+clock = P.time.Clock()  # creates clock to limit frames per second
+loopRate = 60 # sets max speed of main loop
+    
+SCREENSIZE = SCREENWIDTH, SCREENHEIGHT = 1080, 720
+screen = P.display.set_mode(SCREENSIZE)
+    
+P.display.set_caption('Hangman!')
 
 
 def main() :
@@ -71,28 +83,7 @@ def main() :
            _______""",""" 
                   """]
 
-   
-
-
-
-
-
-
-
-
-    import sys
-    import random
-    import pygame as P
     
-    P.init()
-    
-    clock = P.time.Clock()  # creates clock to limit frames per second
-    loopRate = 60 # sets max speed of main loop
-    
-    SCREENSIZE = SCREENWIDTH, SCREENHEIGHT = 1080, 720
-    screen = P.display.set_mode(SCREENSIZE)
-    
-    P.display.set_caption('Hangman!')
     #gets input for what level is wanted to be played
     level = input("\nWelcome to Hangman! You have a choice of 4 levels.\nThese levels are easy, medium, hard and unique.\nWhat level would you like to play? ")
 
