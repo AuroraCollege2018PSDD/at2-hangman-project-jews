@@ -6,6 +6,9 @@ __maintainer__ = ""
 __email__ = "eamon.petersons@education.nsw.go.au"
 __status__ = "Prototype"
 
+
+
+
 def main() :
     hangArray = ["""
                ________ 
@@ -79,73 +82,45 @@ def main() :
 
     import sys
     import random
+    import pygame as P
     
-    inputFile = open('Wordlist.txt', 'r')
-    outputText = inputFile.read()
-    inputFile = open('Wordlist.txt', 'r')
-    textArray = inputFile.readlines()
-    inputFile.close()
+    P.init()
     
+    clock = P.time.Clock()  # creates clock to limit frames per second
+    loopRate = 60 # sets max speed of main loop
+    
+    SCREENSIZE = SCREENWIDTH, SCREENHEIGHT = 1080, 720
+    screen = P.display.set_mode(SCREENSIZE)
+    
+    P.display.set_caption('Hangman!')
     #gets input for what level is wanted to be played
     level = input("\nWelcome to Hangman! You have a choice of 4 levels.\nThese levels are easy, medium, hard and unique.\nWhat level would you like to play? ")
 
     #changes the input to lowercase so that it doess't matter if lowercase or uppercase used when giving input
     level = level.lower()
-    wordArray = []
-    
-    inputFile = open('Wordlist.txt', 'r')
-    outputText = inputFile.read()
-    inputFile = open('Wordlist.txt', 'r')
-    textArray = inputFile.readlines() #read the file
-    inputFile.close() #always good practice to close the file ASAP
-    
+
 
     if level in ["easy","1"]:
         print("\nYou chose the level: Easy")
-        
-        lineChoice = 1
-        wordChoice = random.randint(2,31)
-        
-        outputText = textArray[lineChoice - 1]
-        wordArray = outputText.split()
-        outputText = wordArray[wordChoice - 1]
-        
+        wordArray = ['lick','spit','leap','soot','luck','goat','tree','keep','quiet','lips','frog','sick','undo','after','pool','zebra','dock','pear','cake','fruit','fish','bound','peel','hide','hour','else','going','seen','bike','clap'] 
     elif level in ["medium","2"]:
         print("\nYou chose the level: Medium")
-        
-        lineChoice = 2
-        wordChoice = random.randint(2,31)
-        
-        outputText = textArray[lineChoice - 1]
-        wordArray = outputText.split()
-        outputText = wordArray[wordChoice - 1]
-            
+        wordArray = ['unique','loading','fantasy','justice','video','cringe','describe','total','crystal','radical','different','trust','chalice','dismantle','response','disconnect','largely','content','people','seperation','defending','unfortunate','source','myself','recorded','reason','company','intent','threat','resources']      
     elif level in ["hard","3"]:
         print("\nYou chose the level: Hard")
-        
-        lineChoice = 3
-        wordChoice = random.randint(2,31)
-        
-        outputText = textArray[lineChoice - 1]
-        wordArray = outputText.split()
-        outputText = wordArray[wordChoice - 1]
-                   
+        wordArray = ['simultaneous','hyperbole','confusion','alcohol','environment','accidentally','optional','sarcasm','malnutriton','monetary','corruption','percentage','underestimated','restoration','pretentious','accommnodate','rhythm','alcoholism','competition','pressure','discipline','strength','consistency','frustrating','catalyst','solitary','animosity','periodicity','xenophobe','analysis']           
     elif level in ["unique","4"]:
         print("\nYou chose the level: Unique")
-        lineChoice = 4
-        wordChoice = random.randint(2,31)
-        
-        outputText = textArray[lineChoice - 1]
-        wordArray = outputText.split()
-        outputText = wordArray[wordChoice - 1]
-
+        wordArray = ['arbitrary','serendipity','fortuitous','intransigent','malodorous','incontrovertible','embezzlement','camaraderie','gratuitous','impecunious','ubiquitous','vociferous','obstreperous','utilitarian','ephemeral','conflagration','diaphanous','idiosyncratic','multifarious','pugnacious','sanctimonious','zephyr','vituperate','inexorable','egregious','commensurate','anachronistic','archetypal','demagogue','incontrobertible']           
+    elif level in ["memes","5"]:
+        print("\nYou have found the secret level xD")
+        wordArray = ['yeet','skeet','dab','doge','twentyone','blyat','slav','hippity','emoji','rickroll','lolcat','numa','friday','charlie','chuck','chipmunk','godsplan','lava','onetyone','salt','cashmeoutside','protec','attac']
     else:
-        print("\nSorry that is not a level. Enter a valid level.")
+        print("\nSorry that is not a level. Restart the game and enter a valid level.")
         main()
 
 
     word = random.choice(wordArray)
-    print(outputText)
 
 
     #starting numbers and arrays
