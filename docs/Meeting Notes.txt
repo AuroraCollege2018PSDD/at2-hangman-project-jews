@@ -1,0 +1,17 @@
+17/05/18
+
+Client
+
+the client wants a simple game about death that is somehow relaxing (hangman)
+client wants the game in 6-7 games
+simple for laptop
+start as text then move to a more graphic game
+quick and interesting
+no offensive words
+
+Proposals:
+
+produce text base game at the start to keep it simple and easy to use
+it contains no offensive words
+
+
